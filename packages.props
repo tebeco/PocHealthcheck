@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <MicrosoftAspNetCorePackageVersion>2.*</MicrosoftAspNetCorePackageVersion>
+        <MicrosoftExtensionsCorePackageVersion>2.*</MicrosoftExtensionsCorePackageVersion>
+    </PropertyGroup>
+
+
+</Project>

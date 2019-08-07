@@ -1,0 +1,9 @@
+<Project>
+    <Import Project="packages.props" />
+    
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <WarnAsError />
+    </PropertyGroup>
+
+</Project>

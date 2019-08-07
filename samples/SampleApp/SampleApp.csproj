@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="$(MicrosoftAspNetCorePackageVersion)" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\PocHealthcheck.Http.AspNetCore\PocHealthcheck.Http.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\src\PocHealthcheck.Monitoring.AspNetCore\PocHealthcheck.Monitoring.AspNetCore.csproj" />
+  </ItemGroup>
+
+</Project>

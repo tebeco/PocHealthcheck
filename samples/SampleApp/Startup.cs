@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using SampleApp.HttpClients.Foo;
 
 namespace SampleApp
 {
@@ -26,6 +27,8 @@ namespace SampleApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMyMonitoring();
+            services.AddMyHttpClient<IFooClient, FooClient>("foo");
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

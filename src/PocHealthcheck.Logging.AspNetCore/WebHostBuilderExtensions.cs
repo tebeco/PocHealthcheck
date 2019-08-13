@@ -7,15 +7,15 @@ namespace Microsoft.AspNetCore.Hosting
 {
     public static class WebHostBuilderExtensions
     {
-        public static IWebHostBuilder ConfigureSerilog(this IWebHostBuilder webHostBuilder)
+        public static IWebHostBuilder ConfigureMyLogStack(this IWebHostBuilder webHostBuilder)
         {
             webHostBuilder.ConfigureLogging((webHostBuilderContext, loggingBuilder) =>
             {
-                loggingBuilder.Services.Configure<MySerilogLoggerFactoryOptions>(options =>
+                loggingBuilder.Services.Configure<MyLoggerFactoryOptions>(options =>
                 {
                     options.Registrations.Add(new MyLoggerRegistration() { Name = "default" });
                 });
-                loggingBuilder.Services.AddSingleton<ILoggerFactory, MySerilogLoggerFactory>();
+                loggingBuilder.Services.AddSingleton<ILoggerFactory, MyLoggerFactory>();
             });
 
             return webHostBuilder;

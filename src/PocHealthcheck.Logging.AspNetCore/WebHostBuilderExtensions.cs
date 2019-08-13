@@ -1,21 +1,20 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
-using PocHealthcheck.Logging.Serilog.AspNetCore;
+using PocHealthcheck.Logging;
+using System;
 
 namespace Microsoft.AspNetCore.Hosting
 {
     public static class WebHostBuilderExtensions
     {
-        public static IWebHostBuilder ConfigureMyLogStack(this IWebHostBuilder webHostBuilder)
+        public static IWebHostBuilder ConfigureMyLogStack(this IWebHostBuilder webHostBuilder, Action<ILoggingBuilder> configureLogging)
         {
             webHostBuilder.ConfigureLogging((webHostBuilderContext, loggingBuilder) =>
             {
-                loggingBuilder.Services.Configure<MyLoggerFactoryOptions>(options =>
-                {
-                    options.Registrations.Add(new MyLoggerRegistration() { Name = "default" });
-                });
                 loggingBuilder.Services.AddSingleton<ILoggerFactory, MyLoggerFactory>();
+
+                configureLogging(loggingBuilder);
             });
 
             return webHostBuilder;

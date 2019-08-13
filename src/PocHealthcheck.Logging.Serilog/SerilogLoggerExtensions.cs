@@ -1,14 +1,13 @@
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Serilog.Events;
 
-namespace PocHealthcheck.Logging.Serilog.AspNetCore
+namespace PocHealthcheck.Logging.Serilog
 {
-    public abstract class MySerilogLoggerConfigurationBase : MyLoggerConfigurationBase
+    public static class SerilogLoggerExtensions
     {
-        
-        public LogEventLevel SerilogMinimumLevel => MapToSerilogLevel(MinimumLevel);
+        public static LogEventLevel ToSerilogLevel(this LogLevel level) => MapToSerilogLevel(level);
 
-        private LogEventLevel MapToSerilogLevel(LogLevel loglevel)
+        private static LogEventLevel MapToSerilogLevel(LogLevel loglevel)
         {
             switch (loglevel)
             {

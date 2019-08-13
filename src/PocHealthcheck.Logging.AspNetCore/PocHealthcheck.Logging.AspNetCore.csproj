@@ -1,13 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\PocHealthcheck.Logging.Configuration\PocHealthcheck.Logging.Configuration.csproj" />
     <ProjectReference Include="..\PocHealthcheck.Logging\PocHealthcheck.Logging.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="$(MicrosoftAspNetCorePackageVersion)" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="$(MicrosoftExtensionsCorePackageVersion)" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="$(LatestVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="$(LatestVersion)" />
   </ItemGroup>
 
   <PropertyGroup>

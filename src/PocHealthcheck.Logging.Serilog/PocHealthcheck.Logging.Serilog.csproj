@@ -1,8 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="$(LatestVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="$(LatestVersion)" />
+
+    <PackageReference Include="Serilog.AspNetCore" Version="$(LatestVersion)" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="$(LatestVersion)" />
+    <PackageReference Include="Serilog.Sinks.ElasticSearch" Version="$(LatestVersion)" />
   </ItemGroup>
 
   <ItemGroup>

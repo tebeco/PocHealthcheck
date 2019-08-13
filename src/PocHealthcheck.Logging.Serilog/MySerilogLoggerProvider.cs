@@ -1,11 +1,11 @@
-using Microsoft.Extensions.Logging;
+using PocHealthcheck.Logging.Configuration;
 using Serilog;
 using Serilog.Extensions.Logging;
 using Serilog.Sinks.Elasticsearch;
 
-namespace PocHealthcheck.Logging.Serilog.AspNetCore
+namespace PocHealthcheck.Logging.Serilog
 {
-    public class MySerilogLoggerProvider : ILoggerProvider
+    public class MySerilogLoggerProvider : IMyLoggerProvider
     {
         private readonly MyLoggerRegistration _myLoggerRegistration;
         private readonly LoggerConfiguration _serilogLoggerConfiguration;
@@ -17,7 +17,7 @@ namespace PocHealthcheck.Logging.Serilog.AspNetCore
 
             _serilogLoggerConfiguration = new LoggerConfiguration()
                 .Enrich.FromLogContext()
-                .WriteTo.Console(restrictedToMinimumLevel: myLoggerRegistration.ConsoleConfiguration.SerilogMinimumLevel)
+                .WriteTo.Console(restrictedToMinimumLevel: myLoggerRegistration.ConsoleConfiguration.MinimumLevel.ToSerilogLevel())
                 .WriteTo.Elasticsearch(GetElasticsearchOptions(myLoggerRegistration.ElasticsearchConfiguration))
                 ;
             _serilogLoggerProvider = new SerilogLoggerProvider(_serilogLoggerConfiguration.CreateLogger(), true);
@@ -34,7 +34,7 @@ namespace PocHealthcheck.Logging.Serilog.AspNetCore
         {
             return new ElasticsearchSinkOptions(myElasticsearchConfiguration.Nodes)
             {
-                MinimumLogEventLevel = myElasticsearchConfiguration.SerilogMinimumLevel,
+                MinimumLogEventLevel = myElasticsearchConfiguration.MinimumLevel.ToSerilogLevel(),
                 EmitEventFailure = EmitEventFailureHandling.RaiseCallback,
                 FailureCallback = ex => { }
             };

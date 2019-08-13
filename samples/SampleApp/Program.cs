@@ -19,7 +19,7 @@ namespace SampleApp
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                    .ConfigureMyLogStack()
+                    .ConfigureMySerilogLogStack()
                     .UseStartup<Startup>();
     }
 }

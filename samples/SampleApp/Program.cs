@@ -19,6 +19,7 @@ namespace SampleApp
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+                    .ConfigureSerilog()
+                    .UseStartup<Startup>();
     }
 }

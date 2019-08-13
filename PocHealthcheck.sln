@@ -1,45 +1,63 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.89
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{5B740653-37B6-4058-AD2C-C7829E7B61EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp", "samples\SampleApp\SampleApp.csproj", "{A8758226-F073-49C6-B129-47FD592F1E24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp", "samples\SampleApp\SampleApp.csproj", "{A8758226-F073-49C6-B129-47FD592F1E24}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{92F2128E-CD28-4FD3-9D45-8B9CD573B7D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck", "src\PocHealthcheck.Monitoring\PocHealthcheck.Monitoring.csproj", "{61ABE847-060C-4F63-BEC8-65AA0B3A2230}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Monitoring", "src\PocHealthcheck.Monitoring\PocHealthcheck.Monitoring.csproj", "{61ABE847-060C-4F63-BEC8-65AA0B3A2230}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck.Monitoring.AspNetCore", "src\PocHealthcheck.Monitoring.AspNetCore\PocHealthcheck.Monitoring.AspNetCore.csproj", "{DF0C1D25-B317-4E79-B2E8-8CD3C9806906}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Monitoring.AspNetCore", "src\PocHealthcheck.Monitoring.AspNetCore\PocHealthcheck.Monitoring.AspNetCore.csproj", "{DF0C1D25-B317-4E79-B2E8-8CD3C9806906}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck.Monitoring.Configuration", "src\PocHealthcheck.Monitoring.Configuration\PocHealthcheck.Monitoring.Configuration.csproj", "{94FF964A-14D0-457E-8B70-08A81F2579D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Monitoring.Configuration", "src\PocHealthcheck.Monitoring.Configuration\PocHealthcheck.Monitoring.Configuration.csproj", "{94FF964A-14D0-457E-8B70-08A81F2579D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6CD2B4B0-711B-480F-921E-8809284C8E62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck.Monitoring.AspNetCore.Tests", "test\PocHealthcheck.Monitoring.AspNetCore.Tests\PocHealthcheck.Monitoring.AspNetCore.Tests.csproj", "{5928BCB8-22CA-43AD-8E7D-C28A1711F733}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Monitoring.AspNetCore.Tests", "test\PocHealthcheck.Monitoring.AspNetCore.Tests\PocHealthcheck.Monitoring.AspNetCore.Tests.csproj", "{5928BCB8-22CA-43AD-8E7D-C28A1711F733}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck.Monitoring.Tests", "test\PocHealthcheck.Monitoring.Tests\PocHealthcheck.Monitoring.Tests.csproj", "{96EE3EEE-B6BC-44B9-8356-8D9CDA2E6EF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Monitoring.Tests", "test\PocHealthcheck.Monitoring.Tests\PocHealthcheck.Monitoring.Tests.csproj", "{96EE3EEE-B6BC-44B9-8356-8D9CDA2E6EF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck.Http", "src\PocHealthcheck.Http\PocHealthcheck.Http.csproj", "{D3072BDA-3AC3-4436-AD81-72287712110A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Http", "src\PocHealthcheck.Http\PocHealthcheck.Http.csproj", "{D3072BDA-3AC3-4436-AD81-72287712110A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck.Http.AspNetCore", "src\PocHealthcheck.Http.AspNetCore\PocHealthcheck.Http.AspNetCore.csproj", "{567AC9E6-518C-43C0-983D-34F1ADBF0474}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Http.AspNetCore", "src\PocHealthcheck.Http.AspNetCore\PocHealthcheck.Http.AspNetCore.csproj", "{567AC9E6-518C-43C0-983D-34F1ADBF0474}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck.Http.Configuration", "src\PocHealthcheck.Http.Configuration\PocHealthcheck.Http.Configuration.csproj", "{7448BBF1-8B41-429C-9535-2EC80D38FE29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Http.Configuration", "src\PocHealthcheck.Http.Configuration\PocHealthcheck.Http.Configuration.csproj", "{7448BBF1-8B41-429C-9535-2EC80D38FE29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck.Whatever", "src\PocHealthcheck.Whatever\PocHealthcheck.Whatever.csproj", "{3D72683A-80C5-4F96-9B36-7326CA967988}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Whatever", "src\PocHealthcheck.Whatever\PocHealthcheck.Whatever.csproj", "{3D72683A-80C5-4F96-9B36-7326CA967988}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck.Whatever.AspNetCore", "src\PocHealthcheck.Whatever.AspNetCore\PocHealthcheck.Whatever.AspNetCore.csproj", "{BBDD45CD-8103-41CE-A3EE-3075B2F595AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Whatever.AspNetCore", "src\PocHealthcheck.Whatever.AspNetCore\PocHealthcheck.Whatever.AspNetCore.csproj", "{BBDD45CD-8103-41CE-A3EE-3075B2F595AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck.Whatever.Configuration", "src\PocHealthcheck.Whatever.Configuration\PocHealthcheck.Whatever.Configuration.csproj", "{90E0C517-F102-4EFA-8368-E63F1A328316}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Whatever.Configuration", "src\PocHealthcheck.Whatever.Configuration\PocHealthcheck.Whatever.Configuration.csproj", "{90E0C517-F102-4EFA-8368-E63F1A328316}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck.Http.AspNetCore.Tests", "test\PocHealthcheck.Http.AspNetCore.Tests\PocHealthcheck.Http.AspNetCore.Tests.csproj", "{A6275A88-0C6F-41C8-8294-AB3A102E8457}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Http.AspNetCore.Tests", "test\PocHealthcheck.Http.AspNetCore.Tests\PocHealthcheck.Http.AspNetCore.Tests.csproj", "{A6275A88-0C6F-41C8-8294-AB3A102E8457}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck.Http.Tests", "test\PocHealthcheck.Http.Tests\PocHealthcheck.Http.Tests.csproj", "{6A1038E1-A75F-403A-9CC0-CE5643B330F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Http.Tests", "test\PocHealthcheck.Http.Tests\PocHealthcheck.Http.Tests.csproj", "{6A1038E1-A75F-403A-9CC0-CE5643B330F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck.Whatever.AspNetCore.Tests", "test\PocHealthcheck.Whatever.AspNetCore.Tests\PocHealthcheck.Whatever.AspNetCore.Tests.csproj", "{7DB3F8BB-2CAB-4558-AD7C-793DA99985C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Whatever.AspNetCore.Tests", "test\PocHealthcheck.Whatever.AspNetCore.Tests\PocHealthcheck.Whatever.AspNetCore.Tests.csproj", "{7DB3F8BB-2CAB-4558-AD7C-793DA99985C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHealthcheck.Whatever.Tests", "test\PocHealthcheck.Whatever.Tests\PocHealthcheck.Whatever.Tests.csproj", "{7A790C11-8906-4D1C-917F-3EE18D8D6827}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Whatever.Tests", "test\PocHealthcheck.Whatever.Tests\PocHealthcheck.Whatever.Tests.csproj", "{7A790C11-8906-4D1C-917F-3EE18D8D6827}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Logging", "src\PocHealthcheck.Logging\PocHealthcheck.Logging.csproj", "{0D125F06-9D9C-4D55-BEF7-0C022DB0A2BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Logging.AspNetCore", "src\PocHealthcheck.Logging.AspNetCore\PocHealthcheck.Logging.AspNetCore.csproj", "{0B08819E-7F9D-4D37-86CA-D1DC747B01B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Logging.Configuration", "src\PocHealthcheck.Logging.Configuration\PocHealthcheck.Logging.Configuration.csproj", "{EC61AB75-91F8-493F-A14F-58460B0B0F78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Logging.Serilog", "src\PocHealthcheck.Logging.Serilog\PocHealthcheck.Logging.Serilog.csproj", "{F5915664-2C2C-4216-A206-568927E23B96}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocHealthcheck.Logging.Serilog.AspNetCore", "src\PocHealthcheck.Logging.Serilog.AspNetCore\PocHealthcheck.Logging.Serilog.AspNetCore.csproj", "{19FD3C0A-8DC4-4D1D-BF13-6EBC466A02B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{DCBBB341-DEDD-448C-BCC3-1EA651227FA3}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		global.json = global.json
+		packages.props = packages.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,9 +67,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A8758226-F073-49C6-B129-47FD592F1E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -246,6 +261,69 @@ Global
 		{7A790C11-8906-4D1C-917F-3EE18D8D6827}.Release|x64.Build.0 = Release|Any CPU
 		{7A790C11-8906-4D1C-917F-3EE18D8D6827}.Release|x86.ActiveCfg = Release|Any CPU
 		{7A790C11-8906-4D1C-917F-3EE18D8D6827}.Release|x86.Build.0 = Release|Any CPU
+		{0D125F06-9D9C-4D55-BEF7-0C022DB0A2BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D125F06-9D9C-4D55-BEF7-0C022DB0A2BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D125F06-9D9C-4D55-BEF7-0C022DB0A2BC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0D125F06-9D9C-4D55-BEF7-0C022DB0A2BC}.Debug|x64.Build.0 = Debug|Any CPU
+		{0D125F06-9D9C-4D55-BEF7-0C022DB0A2BC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0D125F06-9D9C-4D55-BEF7-0C022DB0A2BC}.Debug|x86.Build.0 = Debug|Any CPU
+		{0D125F06-9D9C-4D55-BEF7-0C022DB0A2BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D125F06-9D9C-4D55-BEF7-0C022DB0A2BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D125F06-9D9C-4D55-BEF7-0C022DB0A2BC}.Release|x64.ActiveCfg = Release|Any CPU
+		{0D125F06-9D9C-4D55-BEF7-0C022DB0A2BC}.Release|x64.Build.0 = Release|Any CPU
+		{0D125F06-9D9C-4D55-BEF7-0C022DB0A2BC}.Release|x86.ActiveCfg = Release|Any CPU
+		{0D125F06-9D9C-4D55-BEF7-0C022DB0A2BC}.Release|x86.Build.0 = Release|Any CPU
+		{0B08819E-7F9D-4D37-86CA-D1DC747B01B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B08819E-7F9D-4D37-86CA-D1DC747B01B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B08819E-7F9D-4D37-86CA-D1DC747B01B4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0B08819E-7F9D-4D37-86CA-D1DC747B01B4}.Debug|x64.Build.0 = Debug|Any CPU
+		{0B08819E-7F9D-4D37-86CA-D1DC747B01B4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0B08819E-7F9D-4D37-86CA-D1DC747B01B4}.Debug|x86.Build.0 = Debug|Any CPU
+		{0B08819E-7F9D-4D37-86CA-D1DC747B01B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B08819E-7F9D-4D37-86CA-D1DC747B01B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B08819E-7F9D-4D37-86CA-D1DC747B01B4}.Release|x64.ActiveCfg = Release|Any CPU
+		{0B08819E-7F9D-4D37-86CA-D1DC747B01B4}.Release|x64.Build.0 = Release|Any CPU
+		{0B08819E-7F9D-4D37-86CA-D1DC747B01B4}.Release|x86.ActiveCfg = Release|Any CPU
+		{0B08819E-7F9D-4D37-86CA-D1DC747B01B4}.Release|x86.Build.0 = Release|Any CPU
+		{EC61AB75-91F8-493F-A14F-58460B0B0F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC61AB75-91F8-493F-A14F-58460B0B0F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC61AB75-91F8-493F-A14F-58460B0B0F78}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EC61AB75-91F8-493F-A14F-58460B0B0F78}.Debug|x64.Build.0 = Debug|Any CPU
+		{EC61AB75-91F8-493F-A14F-58460B0B0F78}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EC61AB75-91F8-493F-A14F-58460B0B0F78}.Debug|x86.Build.0 = Debug|Any CPU
+		{EC61AB75-91F8-493F-A14F-58460B0B0F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC61AB75-91F8-493F-A14F-58460B0B0F78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC61AB75-91F8-493F-A14F-58460B0B0F78}.Release|x64.ActiveCfg = Release|Any CPU
+		{EC61AB75-91F8-493F-A14F-58460B0B0F78}.Release|x64.Build.0 = Release|Any CPU
+		{EC61AB75-91F8-493F-A14F-58460B0B0F78}.Release|x86.ActiveCfg = Release|Any CPU
+		{EC61AB75-91F8-493F-A14F-58460B0B0F78}.Release|x86.Build.0 = Release|Any CPU
+		{F5915664-2C2C-4216-A206-568927E23B96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5915664-2C2C-4216-A206-568927E23B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5915664-2C2C-4216-A206-568927E23B96}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F5915664-2C2C-4216-A206-568927E23B96}.Debug|x64.Build.0 = Debug|Any CPU
+		{F5915664-2C2C-4216-A206-568927E23B96}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F5915664-2C2C-4216-A206-568927E23B96}.Debug|x86.Build.0 = Debug|Any CPU
+		{F5915664-2C2C-4216-A206-568927E23B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5915664-2C2C-4216-A206-568927E23B96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5915664-2C2C-4216-A206-568927E23B96}.Release|x64.ActiveCfg = Release|Any CPU
+		{F5915664-2C2C-4216-A206-568927E23B96}.Release|x64.Build.0 = Release|Any CPU
+		{F5915664-2C2C-4216-A206-568927E23B96}.Release|x86.ActiveCfg = Release|Any CPU
+		{F5915664-2C2C-4216-A206-568927E23B96}.Release|x86.Build.0 = Release|Any CPU
+		{19FD3C0A-8DC4-4D1D-BF13-6EBC466A02B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19FD3C0A-8DC4-4D1D-BF13-6EBC466A02B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19FD3C0A-8DC4-4D1D-BF13-6EBC466A02B5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{19FD3C0A-8DC4-4D1D-BF13-6EBC466A02B5}.Debug|x64.Build.0 = Debug|Any CPU
+		{19FD3C0A-8DC4-4D1D-BF13-6EBC466A02B5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{19FD3C0A-8DC4-4D1D-BF13-6EBC466A02B5}.Debug|x86.Build.0 = Debug|Any CPU
+		{19FD3C0A-8DC4-4D1D-BF13-6EBC466A02B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19FD3C0A-8DC4-4D1D-BF13-6EBC466A02B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19FD3C0A-8DC4-4D1D-BF13-6EBC466A02B5}.Release|x64.ActiveCfg = Release|Any CPU
+		{19FD3C0A-8DC4-4D1D-BF13-6EBC466A02B5}.Release|x64.Build.0 = Release|Any CPU
+		{19FD3C0A-8DC4-4D1D-BF13-6EBC466A02B5}.Release|x86.ActiveCfg = Release|Any CPU
+		{19FD3C0A-8DC4-4D1D-BF13-6EBC466A02B5}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A8758226-F073-49C6-B129-47FD592F1E24} = {5B740653-37B6-4058-AD2C-C7829E7B61EC}
@@ -264,5 +342,13 @@ Global
 		{6A1038E1-A75F-403A-9CC0-CE5643B330F7} = {6CD2B4B0-711B-480F-921E-8809284C8E62}
 		{7DB3F8BB-2CAB-4558-AD7C-793DA99985C0} = {6CD2B4B0-711B-480F-921E-8809284C8E62}
 		{7A790C11-8906-4D1C-917F-3EE18D8D6827} = {6CD2B4B0-711B-480F-921E-8809284C8E62}
+		{0D125F06-9D9C-4D55-BEF7-0C022DB0A2BC} = {92F2128E-CD28-4FD3-9D45-8B9CD573B7D6}
+		{0B08819E-7F9D-4D37-86CA-D1DC747B01B4} = {92F2128E-CD28-4FD3-9D45-8B9CD573B7D6}
+		{EC61AB75-91F8-493F-A14F-58460B0B0F78} = {92F2128E-CD28-4FD3-9D45-8B9CD573B7D6}
+		{F5915664-2C2C-4216-A206-568927E23B96} = {92F2128E-CD28-4FD3-9D45-8B9CD573B7D6}
+		{19FD3C0A-8DC4-4D1D-BF13-6EBC466A02B5} = {92F2128E-CD28-4FD3-9D45-8B9CD573B7D6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {844A99E9-DF77-4E36-96B5-07072B70EA4D}
 	EndGlobalSection
 EndGlobal

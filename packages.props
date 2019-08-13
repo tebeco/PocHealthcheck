@@ -1,8 +1,8 @@
 <Project>
 
     <PropertyGroup>
-        <MicrosoftAspNetCorePackageVersion>2.*</MicrosoftAspNetCorePackageVersion>
-        <MicrosoftExtensionsCorePackageVersion>2.*</MicrosoftExtensionsCorePackageVersion>
+        <MicrosoftAspNetCorePackageVersion>2.2.0</MicrosoftAspNetCorePackageVersion>
+        <MicrosoftExtensionsCorePackageVersion>2.2.0</MicrosoftExtensionsCorePackageVersion>
     </PropertyGroup>
 
 

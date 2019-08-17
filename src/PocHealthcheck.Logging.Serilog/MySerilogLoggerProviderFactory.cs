@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace PocHealthcheck.Logging.Serilog
 {
-    public class MySerilogLoggerProviderFactory
+    public class MySerilogLoggerProviderFactory : IMyLoggerProviderFactory
     {
         private readonly IOptions<MyLoggerFactoryOptions> _options;
 
@@ -13,7 +13,7 @@ namespace PocHealthcheck.Logging.Serilog
             _options = options;
         }
 
-        public MySerilogLoggerProvider CreateMySerilogProvider(string name)
+        public IMyLoggerProvider CreateProvider(string name)
         {
             var registration = _options.Value.Registrations.Single(registration => registration.Name == name);
             return new MySerilogLoggerProvider(registration);

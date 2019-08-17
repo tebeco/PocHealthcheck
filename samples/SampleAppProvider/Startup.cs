@@ -48,6 +48,7 @@ namespace SampleAppProvider
 
             app.UseHttpsRedirection();
 
+            app.UseMyMonitoring();
             app.Use(async (httpContext, next) =>
             {
                 var loggerFactoy = httpContext.RequestServices.GetRequiredService<ILoggerFactory>();

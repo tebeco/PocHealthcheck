@@ -6,9 +6,8 @@ namespace PocHealthcheck.Logging
     public class MyLoggerProviderRegistration
     {
         public MyLoggerProviderRegistration(string name, IMyLoggerProvider instance)
+            :this(name, (_) => instance)
         {
-            Name = name;
-            Factory = (_) => instance;
         }
 
         public MyLoggerProviderRegistration(string name, Func<IServiceProvider, IMyLoggerProvider> factory)
@@ -37,5 +36,9 @@ namespace PocHealthcheck.Logging
         public MyConsoleConfiguration ConsoleConfiguration { get; set; } = new MyConsoleConfiguration();
 
         public MyElasticsearchConfiguration ElasticsearchConfiguration { get; set; } = new MyElasticsearchConfiguration();
+
+        public void OnFailure()
+        {
+        }
     }
 }

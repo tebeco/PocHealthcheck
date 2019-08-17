@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using PocHealthcheck.Logging;
+using PocHealthcheck.Logging.Serilog;
 
 namespace SampleAppProvider
 {
@@ -23,6 +18,8 @@ namespace SampleAppProvider
             WebHost.CreateDefaultBuilder(args)
                     .ConfigureServices(services =>
                     {
+                        services.TryAddSingleton<IMyLoggerProviderFactory, MySerilogLoggerProviderFactory>();
+
                         services.AddMyLoggerProviders()
                                 .AddPredefinedMySerilog()
                                 ;

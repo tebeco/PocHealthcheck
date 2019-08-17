@@ -1,16 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
   <ItemGroup>
+    <ProjectReference Include="..\PocHealthcheck.Logging\PocHealthcheck.Logging.csproj" />
     <ProjectReference Include="..\PocHealthcheck.Monitoring.Configuration\PocHealthcheck.Monitoring.Configuration.csproj" />
     <ProjectReference Include="..\PocHealthcheck.Monitoring\PocHealthcheck.Monitoring.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="$(LatestVersion)" />
+    <PackageReference Include="Newtonsoft.Json" Version="$(LatestVersion)" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.HealthChecks" Version="$(LatestVersion)" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="$(LatestVersion)" />
   </ItemGroup>
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
 
 </Project>

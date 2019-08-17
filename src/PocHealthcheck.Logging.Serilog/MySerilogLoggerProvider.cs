@@ -40,7 +40,10 @@ namespace PocHealthcheck.Logging.Serilog
                 IndexFormat = $"{myElasticsearchConfiguration.IndexPrefix.ToLower()}-{{0:yyyyMMdd}}",
                 MinimumLogEventLevel = myElasticsearchConfiguration.MinimumLevel.ToSerilogLevel(),
                 EmitEventFailure = EmitEventFailureHandling.RaiseCallback,
-                FailureCallback = ex => { LastFailure = DateTime.UtcNow; }
+                FailureCallback = _ => {
+                    LastFailure = DateTime.UtcNow;
+                    _myLoggerRegistration.OnFailure();
+                }
             };
         }
 

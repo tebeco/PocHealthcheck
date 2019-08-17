@@ -1,6 +1,6 @@
 using System.Net.Http;
 
-namespace SampleApp.HttpClients.Foo
+namespace SampleAppProvider.HttpClients.Foo
 {
     public class FooClient : IFooClient
     {

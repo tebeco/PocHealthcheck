@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using PocHealthcheck.Logging;
 
-namespace SampleApp
+namespace SampleAppProvider
 {
     public class Program
     {
@@ -19,7 +21,12 @@ namespace SampleApp
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                    .ConfigureMySerilogLogStack()
+                    .ConfigureServices(services =>
+                    {
+                        services.AddMyLoggerProviders()
+                                .AddPredefinedMySerilog()
+                                ;
+                    })
                     .UseStartup<Startup>();
     }
 }

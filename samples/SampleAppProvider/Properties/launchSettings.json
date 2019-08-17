@@ -10,7 +10,7 @@
     }
   },
   "profiles": {
-    "SampleApp": {
+    "SampleAppProvider": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",

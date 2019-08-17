@@ -33,9 +33,9 @@ namespace PocHealthcheck.Logging
         {
             if (!_providers.TryGetValue(categoryName, out var loggerProvider))
             {
-                if (!_providers.TryGetValue("default", out loggerProvider))
+                if (!_providers.TryGetValue(MyLoggerConstants.DefaultLoggerName, out loggerProvider))
                 {
-                    throw new Exception();
+                    throw new ArgumentException("could not find any logger to use");
                 }
             }
 
@@ -44,6 +44,10 @@ namespace PocHealthcheck.Logging
 
         public void Dispose()
         {
+            foreach (var provider in _providers.Values)
+            {
+                provider.Dispose();
+            }
         }
     }
 }

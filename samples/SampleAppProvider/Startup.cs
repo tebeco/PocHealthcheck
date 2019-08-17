@@ -10,9 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using SampleApp.HttpClients.Foo;
+using PocHealthcheck.Logging.Configuration;
+using SampleAppProvider.HttpClients.Foo;
 
-namespace SampleApp
+namespace SampleAppProvider
 {
     public class Startup
     {
@@ -46,6 +47,19 @@ namespace SampleApp
             }
 
             app.UseHttpsRedirection();
+
+            app.Use(async (httpContext, next) =>
+            {
+                var loggerFactoy = httpContext.RequestServices.GetRequiredService<ILoggerFactory>();
+                var inOutlogger = loggerFactoy.CreateLogger(MyLoggerConstants.InOutLoggerName);
+
+                inOutlogger.LogInformation($"Incoming request for {httpContext.Request.Path}");
+
+                await next().ConfigureAwait(false);
+
+                inOutlogger.LogInformation($"StatusCode request for {httpContext.Request.Path} was {httpContext.Response.StatusCode}");
+
+            });
             app.UseMvc();
         }
     }

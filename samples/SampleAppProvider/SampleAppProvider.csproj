@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\PocHealthcheck.Http.AspNetCore\PocHealthcheck.Http.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\src\PocHealthcheck.Logging.AspNetCore\PocHealthcheck.Logging.AspNetCore.csproj" />
     <ProjectReference Include="..\..\src\PocHealthcheck.Logging.Serilog.AspNetCore\PocHealthcheck.Logging.Serilog.AspNetCore.csproj" />
     <ProjectReference Include="..\..\src\PocHealthcheck.Monitoring.AspNetCore\PocHealthcheck.Monitoring.AspNetCore.csproj" />
   </ItemGroup>

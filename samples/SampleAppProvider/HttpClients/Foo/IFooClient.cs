@@ -1,4 +1,4 @@
-namespace SampleApp.HttpClients.Foo
+namespace SampleAppProvider.HttpClients.Foo
 {
     public interface IFooClient
     {

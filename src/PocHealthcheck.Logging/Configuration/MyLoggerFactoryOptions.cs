@@ -4,6 +4,6 @@ namespace PocHealthcheck.Logging.Configuration
 {
     public class MyLoggerFactoryOptions
     {
-        public ICollection<MyLoggerRegistration> Registrations { get; } = new List<MyLoggerRegistration>();
+        public ICollection<MyLoggerProviderRegistration> Registrations { get; } = new List<MyLoggerProviderRegistration>();
     }
 }

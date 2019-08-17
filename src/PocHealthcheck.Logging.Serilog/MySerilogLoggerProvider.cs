@@ -2,16 +2,17 @@ using PocHealthcheck.Logging.Configuration;
 using Serilog;
 using Serilog.Extensions.Logging;
 using Serilog.Sinks.Elasticsearch;
+using System;
 
 namespace PocHealthcheck.Logging.Serilog
 {
     public class MySerilogLoggerProvider : IMyLoggerProvider
     {
-        private readonly MyLoggerRegistration _myLoggerRegistration;
+        private readonly MyLoggerProviderRegistration _myLoggerRegistration;
         private readonly LoggerConfiguration _serilogLoggerConfiguration;
         private readonly SerilogLoggerProvider _serilogLoggerProvider;
 
-        public MySerilogLoggerProvider(MyLoggerRegistration myLoggerRegistration)
+        public MySerilogLoggerProvider(MyLoggerProviderRegistration myLoggerRegistration)
         {
             _myLoggerRegistration = myLoggerRegistration;
 
@@ -25,6 +26,8 @@ namespace PocHealthcheck.Logging.Serilog
 
         public string Name => _myLoggerRegistration.Name;
 
+        public DateTime LastFailure { get; private set; } = DateTime.MinValue;
+
         public Microsoft.Extensions.Logging.ILogger CreateLogger(string categoryName)
         {
             return _serilogLoggerProvider.CreateLogger(categoryName);
@@ -34,9 +37,10 @@ namespace PocHealthcheck.Logging.Serilog
         {
             return new ElasticsearchSinkOptions(myElasticsearchConfiguration.Nodes)
             {
+                IndexFormat = $"{myElasticsearchConfiguration.IndexPrefix.ToLower()}-{{0:yyyyMMdd}}",
                 MinimumLogEventLevel = myElasticsearchConfiguration.MinimumLevel.ToSerilogLevel(),
                 EmitEventFailure = EmitEventFailureHandling.RaiseCallback,
-                FailureCallback = ex => { }
+                FailureCallback = ex => { LastFailure = DateTime.UtcNow; }
             };
         }
 

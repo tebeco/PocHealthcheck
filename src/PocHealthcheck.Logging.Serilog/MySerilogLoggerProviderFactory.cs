@@ -13,7 +13,7 @@ namespace PocHealthcheck.Logging.Serilog
             _options = options;
         }
 
-        public MySerilogLoggerProvider Create(string name)
+        public MySerilogLoggerProvider CreateMySerilogProvider(string name)
         {
             var registration = _options.Value.Registrations.Single(registration => registration.Name == name);
             return new MySerilogLoggerProvider(registration);

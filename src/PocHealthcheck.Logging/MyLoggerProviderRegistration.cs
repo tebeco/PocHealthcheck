@@ -37,8 +37,11 @@ namespace PocHealthcheck.Logging
 
         public MyElasticsearchConfiguration ElasticsearchConfiguration { get; set; } = new MyElasticsearchConfiguration();
 
+        public DateTime LastFailure { get; private set; } = DateTime.MinValue;
+
         public void OnFailure()
         {
+            LastFailure = DateTime.UtcNow;
         }
     }
 }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Options;
 using PocHealthcheck.Logging.Configuration;
@@ -20,21 +18,13 @@ namespace Microsoft.Extensions.DependencyInjection
                 {
                     options.Registrations.Add(
                         new HealthCheckRegistration(loggerRegistration.Name, 
-                                                    new LoggerHealthCheck(),
+                                                    sp => ActivatorUtilities.CreateInstance<MyLoggerProviderHealthCheck>(sp),
                                                     HealthStatus.Unhealthy,
                                                     Array.Empty<string>()));
                 }
             });
 
             return healthChecksBuilder;
-        }
-    }
-
-    public class LoggerHealthCheck : IHealthCheck
-    {
-        public Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

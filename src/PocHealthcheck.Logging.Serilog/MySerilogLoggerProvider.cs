@@ -26,8 +26,6 @@ namespace PocHealthcheck.Logging.Serilog
 
         public string Name => _myLoggerRegistration.Name;
 
-        public DateTime LastFailure { get; private set; } = DateTime.MinValue;
-
         public Microsoft.Extensions.Logging.ILogger CreateLogger(string categoryName)
         {
             return _serilogLoggerProvider.CreateLogger(categoryName);
@@ -41,7 +39,6 @@ namespace PocHealthcheck.Logging.Serilog
                 MinimumLogEventLevel = myElasticsearchConfiguration.MinimumLevel.ToSerilogLevel(),
                 EmitEventFailure = EmitEventFailureHandling.RaiseCallback,
                 FailureCallback = _ => {
-                    LastFailure = DateTime.UtcNow;
                     _myLoggerRegistration.OnFailure();
                 }
             };

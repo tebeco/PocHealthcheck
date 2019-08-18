@@ -16,13 +16,13 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IMyLoggerProviderBuilder AddPredefinedMySerilog(this IMyLoggerProviderBuilder builder)
         {
             return builder
-                .AddDefaultMySerilog()
-                .AddInOutMySerilog()
-                .AddHealthCheksMySerilog()
+                .AddDefaultMyLoggerProvider()
+                .AddInOutMyLoggerProvider()
+                .AddHealthCheksMyLoggerProvider()
                 ;
         }
 
-        public static IMyLoggerProviderBuilder AddDefaultMySerilog(this IMyLoggerProviderBuilder builder)
+        public static IMyLoggerProviderBuilder AddDefaultMyLoggerProvider(this IMyLoggerProviderBuilder builder)
         {
             builder.AddMyLoggerProvider(MyLoggerConstants.DefaultLoggerName, (serviceProvider, name) =>
             {
@@ -33,7 +33,7 @@ namespace Microsoft.Extensions.DependencyInjection
             return builder;
         }
 
-        public static IMyLoggerProviderBuilder AddInOutMySerilog(this IMyLoggerProviderBuilder builder)
+        public static IMyLoggerProviderBuilder AddInOutMyLoggerProvider(this IMyLoggerProviderBuilder builder)
         {
             builder.AddMyLoggerProvider(MyLoggerConstants.InOutLoggerName, (serviceProvider, name) =>
             {
@@ -44,7 +44,7 @@ namespace Microsoft.Extensions.DependencyInjection
             return builder;
         }
 
-        public static IMyLoggerProviderBuilder AddHealthCheksMySerilog(this IMyLoggerProviderBuilder builder)
+        public static IMyLoggerProviderBuilder AddHealthCheksMyLoggerProvider(this IMyLoggerProviderBuilder builder)
         {
             builder.AddMyLoggerProvider(MyLoggerConstants.HealthChecksLoggerName, (serviceProvider, name) =>
             {

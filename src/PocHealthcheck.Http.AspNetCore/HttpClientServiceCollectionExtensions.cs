@@ -14,7 +14,8 @@ namespace Microsoft.Extensions.DependencyInjection
                     .Configure<IConfiguration>((options, configuration) => configuration.Bind($"{MyHttpClientOptions.SectionName}:{name}"))
                     ;
 
-            return services.AddHttpClient<TClient, TImplementation>(name);
+            return services.AddHttpClient<TClient, TImplementation>(name)
+                           .AddHttpClientHealthCheck(name);
         }
 
 
@@ -23,7 +24,14 @@ namespace Microsoft.Extensions.DependencyInjection
             where TImplementation : class, TClient
         {
             var httpClientBuilder = services.AddMyHttpClient<TClient, TImplementation>(name);
-            services.Configure<MyHttpClientOptions>(name, configure);
+            services.Configure(name, configure);
+
+            return httpClientBuilder;
+        }
+
+        public static IHttpClientBuilder AddHttpClientHealthCheck(this IHttpClientBuilder httpClientBuilder, string name)
+        {
+            httpClientBuilder.Services.AddHostedService<HttpClientHealthCheckBackgroundService>();
 
             return httpClientBuilder;
         }

@@ -1,8 +1,27 @@
 <Project>
 
-    <PropertyGroup>
-        <LatestVersion>[*, 9999.0]</LatestVersion>
-    </PropertyGroup>
+  <PropertyGroup>
+    <LatestVersion>[*, 9999.0]</LatestVersion>
+  </PropertyGroup>
 
+  <PropertyGroup>
+    <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+    <IsOnCi Condition="'$(Foo)' != 'true'" >false</IsOnCi>
+    <IsOnCi Condition="'$(Foo)' == 'true'" >true</IsOnCi>
+  </PropertyGroup>
+
+  <Target Name="DoSomethingBeforeRestore" BeforeTargets="Restore;CollectPackageReferences">
+    <Message Text="============================================== $(IsOnCi) ==============================================" Importance="high" />
+  </Target>
+
+  <PropertyGroup Condition="'$(IsOnCi)' == 'true'">
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <RestoreLockedMode>true</RestoreLockedMode>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(IsOnCi)' != 'true'">
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <RestoreLockedMode>false</RestoreLockedMode>
+  </PropertyGroup>
 
 </Project>

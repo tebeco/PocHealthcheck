@@ -6,16 +6,8 @@ namespace PocHealthcheck.Logging.Serilog
 {
     public class MySerilogLoggerProviderFactory : IMyLoggerProviderFactory
     {
-        private readonly IOptions<MyLoggerFactoryOptions> _options;
-
-        public MySerilogLoggerProviderFactory(IOptions<MyLoggerFactoryOptions> options)
+        public IMyLoggerProvider CreateProvider(MyLoggerProviderRegistration registration)
         {
-            _options = options;
-        }
-
-        public IMyLoggerProvider CreateProvider(string name)
-        {
-            var registration = _options.Value.Registrations.Single(registration => registration.Name == name);
             return new MySerilogLoggerProvider(registration);
         }
     }

@@ -2,6 +2,6 @@
 {
     public interface IMyLoggerProviderFactory
     {
-        IMyLoggerProvider CreateProvider(string name);
+        IMyLoggerProvider CreateProvider(MyLoggerProviderRegistration registration);
     }
 }

@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using PocHealthcheck.Logging;
 using PocHealthcheck.Logging.Configuration;
+using System.Linq;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -22,37 +24,27 @@ namespace Microsoft.Extensions.DependencyInjection
                 ;
         }
 
-        public static IMyLoggerProviderBuilder AddDefaultMyLoggerProvider(this IMyLoggerProviderBuilder builder)
+        public static IMyLoggerProviderBuilder AddDefaultMyLoggerProvider(this IMyLoggerProviderBuilder builder) =>
+            builder.AddNamedMyLoggerProvider(MyLoggerConstants.DefaultLoggerName);
+
+        public static IMyLoggerProviderBuilder AddInOutMyLoggerProvider(this IMyLoggerProviderBuilder builder) =>
+            builder.AddNamedMyLoggerProvider(MyLoggerConstants.InOutLoggerName);
+
+        public static IMyLoggerProviderBuilder AddHealthCheksMyLoggerProvider(this IMyLoggerProviderBuilder builder) =>
+            builder.AddNamedMyLoggerProvider(MyLoggerConstants.HealthChecksLoggerName);
+
+        public static IMyLoggerProviderBuilder AddNamedMyLoggerProvider(this IMyLoggerProviderBuilder builder, string providerName)
         {
-            builder.AddMyLoggerProvider(MyLoggerConstants.DefaultLoggerName, (serviceProvider, name) =>
+            builder.AddMyLoggerProvider(providerName, (serviceProvider, name) =>
             {
                 var factory = serviceProvider.GetRequiredService<IMyLoggerProviderFactory>();
-                return factory.CreateProvider(name);
+                var options = serviceProvider.GetRequiredService<IOptions<MyLoggerFactoryOptions>>();
+                var registration = options.Value.Registrations.Single(registration => registration.Name == name);
+                return factory.CreateProvider(registration);
             });
 
             return builder;
         }
 
-        public static IMyLoggerProviderBuilder AddInOutMyLoggerProvider(this IMyLoggerProviderBuilder builder)
-        {
-            builder.AddMyLoggerProvider(MyLoggerConstants.InOutLoggerName, (serviceProvider, name) =>
-            {
-                var factory = serviceProvider.GetRequiredService<IMyLoggerProviderFactory>();
-                return factory.CreateProvider(name);
-            });
-
-            return builder;
-        }
-
-        public static IMyLoggerProviderBuilder AddHealthCheksMyLoggerProvider(this IMyLoggerProviderBuilder builder)
-        {
-            builder.AddMyLoggerProvider(MyLoggerConstants.HealthChecksLoggerName, (serviceProvider, name) =>
-            {
-                var factory = serviceProvider.GetRequiredService<IMyLoggerProviderFactory>();
-                return factory.CreateProvider(name);
-            });
-
-            return builder;
-        }
     }
 }
